@@ -7,6 +7,11 @@
   <name>Stream</name>
   <description>To stream files like Images, Videos, PDF's etc.., From Server Machine to Client Machine</description>
   
+  <properties>
+    <!-- <jerseyVersion>1.9.3</jerseyVersion> java.lang.ClassNotFoundException: com.sun.jersey.spi.container.servlet.ServletContainer -->
+    <jerseyVersion>1.9.1</jerseyVersion>
+  </properties>
+  
 <dependencies>
 
 <!-- Send Server Request -->
@@ -35,7 +40,80 @@
 	    <version>4.3</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20090211</version>
+	</dependency>
 	
+	<!-- 
+	New Group    org.glassfish.jersey.core[2.x]    com.sun.jersey[1.x]
+	 -->
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-client</artifactId>
+	    <version>${jerseyVersion}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-core -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-core</artifactId>
+	    <version>${jerseyVersion}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-server</artifactId>
+	    <version>${jerseyVersion}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-multipart -->
+<dependency>
+    <groupId>com.sun.jersey.contribs</groupId>
+    <artifactId>jersey-multipart</artifactId>
+    <version>${jerseyVersion}</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.jvnet.mimepull/mimepull -->
+<dependency>
+    <groupId>org.jvnet.mimepull</groupId>
+    <artifactId>mimepull</artifactId>
+    <version>1.9.7</version>
+</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.8.7</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.8.7</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.8.7</version>
+</dependency>
+	
+	<!-- Rest Client -->
+	<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+<dependency>
+    <groupId>commons-httpclient</groupId>
+    <artifactId>commons-httpclient</artifactId>
+    <version>3.1</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.2</version>
+</dependency>
+
 </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>

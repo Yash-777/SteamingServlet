@@ -4,4 +4,42 @@
   <welcome-file-list>
     <welcome-file>getFileStream.html</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>Jersey Web Services</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>com.gridhub.jersey.files</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Services</servlet-name>
+    <url-pattern>/jersey1/*</url-pattern>
+  </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>My Resource</web-resource-name>
+      <url-pattern>/auth/*</url-pattern>
+      <url-pattern>/wd/hub/session</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>manager</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>My Resource</realm-name>
+  </login-config>
+  <security-role>
+    <role-name>manager</role-name>
+  </security-role>
+  <error-page>
+    <error-code>401</error-code>
+    <location>/WEB-INF/jsp/401error.jsp</location>
+  </error-page>
 </web-app>
