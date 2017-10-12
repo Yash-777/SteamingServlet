@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.apache.catalina.realm.GenericPrincipal;
 
 /**
  * Servlet implementation class RemoteServer
@@ -45,6 +44,12 @@ public class RemoteServer extends HttpServlet {
 			sb.append(str);
 		}
 		HttpRequestData.capabilitiesJSON(sb.toString());
+		
+		GenericPrincipal userPrincipal = (GenericPrincipal) req.getUserPrincipal();
+		String userName = userPrincipal.getName();
+		String password = userPrincipal.getPassword();
+		
+		System.out.format("User: %s \t Pass: %s \n", userName, password);
 		
 		PrintWriter writer = resp.getWriter();
 		writer.append("GET Served at: ").append(req.getContextPath());
