@@ -1,0 +1,36 @@
+http://www.avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-with-tomcat.html
+https://stackoverflow.com/questions/2014619/tomcat-basic-auth
+http://archive.oreilly.com/pub/a/java/archive/tomcat-tips.html
+
+Title « Tomcat container managed security
+
+Realm Authentication: https://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html#JDBCRealm
+
+Restart Tomcat server [XML]
+	UserDatabaseRealm - tomcat-user.xml [Default]
+	MemoryRealm - tomcat-user.xml
+	LockOutRealm - LockOutRealm to prevent attempts to guess user passwords via a brute-force attack
+	
+Dynamic - No need to restart the server
+	JDBCRealm  -
+
+http://hoststring/ContextPath/servletPath/pathInfo
+http://host:port/ApplicationName/resourcePath/index.html
+
+Restricting Access to Resources in a Web Application
+	https://docs.oracle.com/cd/E13222_01/wls/docs60/adminguide/config_web_app.html#100607
+	
+This Context becomes the default web application for this virtual host, and is used to process
+all requests that do not match any other Context's context path.
+
+===============================
+PDF - https://stackoverflow.com/a/14690795/5081877
+	<embed src="http://gahp.net/wp-content/uploads/2017/09/sample.pdf" width="600" height="500"
+	alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"
+	background-color="0xFF525659" top-toolbar-height="56" full-frame="">
+	
+	https://stackoverflow.com/a/48225096/5081877
+	
+Excel to HTML - https://github.com/SheetJS/js-xlsx [http://oss.sheetjs.com/]
+	https://codebeautify.org/excel-to-html
+	

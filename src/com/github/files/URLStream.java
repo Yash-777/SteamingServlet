@@ -19,22 +19,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class URLStream
  * 
- * Test URL « localhsot:8080/SteamingServlet/files/URLStream
+ * Test URL ï¿½ localhsot:8080/SteamingServlet/files/URLStream
  */
 @WebServlet("/files/URLStream")
 public class URLStream extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public URLStream() {
-        super();
-    }
+	
+	public URLStream() {
+		super();
+	}
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		File source = new File("D:\\SVN_Commit.PNG");
 		long start = System.nanoTime();
@@ -46,6 +40,12 @@ public class URLStream extends HttpServlet {
 		
 		try {
 			image = new FileInputStream(source);
+			
+			/*String fileID = request.getParameter("id");
+			System.out.println("Requested File ID : "+fileID);
+			// Mongo DB GridFS - https://stackoverflow.com/a/33544285/5081877
+			image = outputImageFile.getInputStream();*/
+			
 			bin = new BufferedInputStream( image );
 			bout = new BufferedOutputStream( sos );
 			int ch =0; ;
@@ -58,19 +58,22 @@ public class URLStream extends HttpServlet {
 			bout.close();
 			sos.close();
 		}
+		
+		
+		
 		System.out.println("Time taken by Stream Copy = "+(System.nanoTime()-start));
 	}
 	
 	/**
-	 * <B>Java Copy File – Stream</B>
+	 * <B>Java Copy File ï¿½ Stream</B>
 	 * 
 	 * <P>This is the conventional way of file copy in java, here we create two Files, source and destination.
 	 * Then we create InputStream from source and write it to destination file using OutputStream for java
 	 * copy file operation.</p>
 	 * 
-	 * @param source       « the input file
-	 * @param dest         « the output file
-	 * @throws IOException « if any file is unavailable then throws exception.
+	 * @param source       ï¿½ the input file
+	 * @param dest         ï¿½ the output file
+	 * @throws IOException ï¿½ if any file is unavailable then throws exception.
 	 */
 	void copyFileUsingStream(File source, File dest) throws IOException {
 		long start = System.nanoTime();

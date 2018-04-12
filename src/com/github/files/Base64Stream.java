@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * EX: http://way2java.com/servlets/sending-image-client-servlet-example/
  * 
- * Test URL « localhsot:8080/SteamingServlet/files/base64?userField=image
+ * Test URL ï¿½ http://localhost:8080/SteamingServlet/files/base64?userField=image
  * @author yashwanth.m
  */
 @WebServlet(urlPatterns = { "/files/base64" }) /*asyncSupported = true,*/

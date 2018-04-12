@@ -76,6 +76,9 @@ public class MultipartFileUpload extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	
+	// Uploaded files to be save in below specified path.
+	static File directoryPath = new File("E:\\");
+	
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("http://localhost:8080/SteamingServlet/fileUpload.jsp");
@@ -86,8 +89,6 @@ public class MultipartFileUpload extends HttpServlet {
 				System.out.println("Header: " + request.getHeader(headerNames.nextElement()));
 			}
 		}
-		
-		File directoryPath = new File("E:\\");
 		
 		for (Part part : request.getParts()) {
 			System.out.println("===== ----- Multipart Data ----- =====");
