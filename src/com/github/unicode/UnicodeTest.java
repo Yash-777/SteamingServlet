@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Test URL « 
  * http://localhost:8080/SteamingServlet/locale?message="יאש"
+ * http://localhost:8080/SteamingServlet/locale?message="Gần đây"
  * http://localhost:8080/SteamingServlet/locale?message=%22%D7%99%D7%90%D7%A9%22
  * 
  * http://localhost:8080/SteamingServlet/msg/locale?message=%22%D7%99%D7%90%D7%A9%22

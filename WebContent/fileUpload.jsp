@@ -7,8 +7,11 @@
 </head>
 <body>
 <center>
+<!-- http://localhost:8080/SteamingServlet/fileUpload.jsp -->
+
 	<h1>File Upload</h1>
-	<form method="post" action="files/UploadFile" enctype="multipart/form-data">
+	<!-- <form method="post" action="files/UploadFile" enctype="multipart/form-data"> -->
+	<form method="post" action="Apache/FileUpload" enctype="multipart/form-data">
 		File1: <input type="file" name="file1" size="60" /> <br/>
 		File2: <input type="file" name="file2" /> <br/>
 		<br/><input type="submit" value="Upload" />

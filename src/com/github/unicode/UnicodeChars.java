@@ -14,7 +14,10 @@ public class UnicodeChars {
 	public static void main(String args[]) {
 		
 		//String objectsList[] = {"YashPageName", "'יאש'"};
-		insertAutoIncrement_SQL("Yash_777", "Telugu", "יאש");
+		
+		//	https://dev.mysql.com/doc/refman/5.7/en/charset-unicode-sets.html
+		//insertAutoIncrement_SQL("Yash_777", "Telugu", "יאש"); // Hebrew
+		insertAutoIncrement_SQL("Yash_777", "Telugu", "Gần đây"); // Vietnamese	 [Gần đây « Recently]
 		
 		//testLocale_java();
 	}
@@ -36,7 +39,7 @@ public class UnicodeChars {
 	}
 
 	public static void insertAutoIncrement_SQL(String UserName, String Language, String Message) {
-		String DB_URL = "jdbc:mysql://172.0.0.1:3306/test", DB_User = "root", DB_Password = "";
+		String DB_URL = "jdbc:mysql://127.0.0.1:3306/test", DB_User = "root", DB_Password = "";
 		
 		String insertSQL = "INSERT INTO `unicodeinfo`( `UserName`, `Language`, `Message`) VALUES (?,?,?)";
 				//"INSERT INTO `unicodeinfo`(`id`, `UserName`, `Language`, `Message`) VALUES (?,?,?,?)";

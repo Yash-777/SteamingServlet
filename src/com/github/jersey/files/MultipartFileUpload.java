@@ -1,4 +1,4 @@
-package com.gridhub.jersey.files;
+package com.github.jersey.files;
 
 import java.io.File;
 import java.io.FileOutputStream;

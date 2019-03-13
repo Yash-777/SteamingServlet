@@ -1,7 +1,5 @@
 package com.github.files;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class URLStream
  * 
- * Test URL � localhsot:8080/SteamingServlet/files/URLStream
+ * Test URL « localhsot:8080/SteamingServlet/files/URLStream
  */
 @WebServlet("/files/URLStream")
 public class URLStream extends HttpServlet {
@@ -30,36 +28,18 @@ public class URLStream extends HttpServlet {
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		File source = new File("D:\\SVN_Commit.PNG");
 		long start = System.nanoTime();
 		ServletOutputStream sos = response.getOutputStream();
 		
+		/*File source = new File("D:\\SVN_Commit.mp4");
 		InputStream image = null;
-		BufferedInputStream bin = null;
-		BufferedOutputStream bout = null;
-		
 		try {
 			image = new FileInputStream(source);
-			
-			/*String fileID = request.getParameter("id");
-			System.out.println("Requested File ID : "+fileID);
-			// Mongo DB GridFS - https://stackoverflow.com/a/33544285/5081877
-			image = outputImageFile.getInputStream();*/
-			
-			bin = new BufferedInputStream( image );
-			bout = new BufferedOutputStream( sos );
-			int ch =0; ;
-			while((ch=bin.read())!=-1) {
-				bout.write(ch);
-			}
+			FileServletOutputStream.getFileStream(image, sos);
 		} finally {
-			bin.close();
 			image.close();
-			bout.close();
-			sos.close();
-		}
-		
-		
+		}*/
+		FileServletOutputStream.getMongoID_FileStream(sos, "777");
 		
 		System.out.println("Time taken by Stream Copy = "+(System.nanoTime()-start));
 	}
